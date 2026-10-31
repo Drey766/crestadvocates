@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+/*
+ * Colour values live only in src/config/business.ts. layout.tsx writes them to
+ * :root as --brand-* variables; this block maps Tailwind's colour tokens onto them.
+ */
+@theme inline {
+  --color-navy: var(--brand-navy);
+  --color-navy-raised: var(--brand-navy-raised);
+  --color-navy-line: var(--brand-navy-line);
+  --color-gold: var(--brand-gold);
+  --color-gold-light: var(--brand-gold-light);
+  --color-gold-dark: var(--brand-gold-dark);
+  --color-gold-text: var(--brand-gold-text);
+  --color-ivory: var(--brand-ivory);
+  --color-white: var(--brand-white);
+  --color-ink: var(--brand-ink);
+  --color-slate: var(--brand-slate);
+  --color-muted-on-navy: var(--brand-muted-on-navy);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-cormorant), ui-serif, Georgia, serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-white);
+    color: var(--color-slate);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    color: var(--color-ink);
+    font-weight: 600;
+    line-height: 1.15;
+  }
+
+  /* Default focus ring is navy (light backgrounds); .on-navy switches it to gold */
+  :focus-visible {
+    outline: 2px solid var(--color-navy);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  .on-navy :focus-visible {
+    outline-color: var(--color-gold);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  /* Dark section: exact logo navy so baked-in logo backgrounds blend */
+  .on-navy {
+    @apply bg-navy text-muted-on-navy;
+  }
+  .on-navy h1,
+  .on-navy h2,
+  .on-navy h3 {
+    @apply text-white;
+  }
+
+  /* ── Buttons (Inter, min 48px tall) ── */
+  .btn-gold,
+  .btn-outline-gold,
+  .btn-navy,
+  .btn-outline-navy {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-sm px-6 py-3 text-sm font-semibold tracking-wide transition-colors duration-200;
+  }
+  .btn-gold {
+    @apply bg-gold text-navy hover:bg-gold-light;
+  }
+  .btn-outline-gold {
+    @apply border border-gold text-gold hover:bg-gold hover:text-navy;
+  }
+  .btn-navy {
+    @apply bg-navy text-white hover:bg-navy-raised;
+  }
+  .btn-outline-navy {
+    @apply border border-navy text-navy hover:bg-navy hover:text-white;
+  }
+
+  /* ── Forms ── */
+  .label {
+    @apply mb-2 block text-sm font-medium text-ink;
+  }
+  .input {
+    @apply block min-h-12 w-full rounded-sm border border-slate/40 bg-white px-4 py-3 text-base text-ink placeholder:text-slate/70 focus:border-navy focus:outline-none focus:ring-2 focus:ring-navy/30;
+  }
+
+  /* ── Surfaces ── */
+  .card {
+    @apply rounded-sm border border-navy/10 bg-white p-6;
+  }
+  .card-dark {
+    @apply rounded-sm border border-navy-line bg-navy-raised p-6;
+  }
+
+  /* Uppercase spaced label, echoing "A D V O C A T E S". Gold on navy, goldText on light. */
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.3em] text-gold-text;
+  }
+  .on-navy .eyebrow {
+    @apply text-gold;
+  }
+
+  /* Thin gold rule with a small centred diamond (decorative) */
+  .gold-rule {
+    @apply flex items-center gap-3 text-gold;
+  }
+  .gold-rule::before,
+  .gold-rule::after {
+    content: "";
+    @apply h-px flex-1 bg-current opacity-70;
+  }
+
+  /* Checklist with gold SVG check bullets (see components/ui/CheckList.tsx) */
+  .check-list {
+    @apply space-y-3;
+  }
+  .check-list li {
+    @apply flex items-start gap-3;
+  }
+
+  .badge-draft {
+    @apply inline-flex items-center rounded-sm border border-dashed border-gold-text/60 bg-ivory px-2 py-0.5 align-middle font-sans text-[0.65rem] font-semibold uppercase tracking-[0.15em] text-gold-text;
+  }
+
+  /* Long-form article body on light backgrounds */
+  .prose-article {
+    @apply max-w-prose text-base leading-relaxed text-slate md:text-lg;
+  }
+  .prose-article > * + * {
+    @apply mt-5;
+  }
+  .prose-article h2 {
+    @apply mt-12 text-2xl md:text-3xl;
+  }
+  .prose-article h3 {
+    @apply mt-8 text-xl md:text-2xl;
+  }
+  .prose-article a {
+    @apply font-medium text-navy underline decoration-gold underline-offset-4;
+  }
+  .prose-article ul {
+    @apply list-disc space-y-2 pl-6 marker:text-gold-text;
+  }
+  .prose-article ol {
+    @apply list-decimal space-y-2 pl-6;
+  }
+  .prose-article blockquote {
+    @apply border-l-2 border-gold pl-5 font-display text-xl italic text-ink md:text-2xl;
+  }
+  .prose-article strong {
+    @apply font-semibold text-ink;
+  }
+}
