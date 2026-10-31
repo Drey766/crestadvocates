@@ -6,6 +6,7 @@ import { DraftBadge } from "@/components/ui/DraftBadge";
 import { GoldRule } from "@/components/ui/GoldRule";
 import { LogoStacked } from "@/components/ui/Logo";
 import { MountainPattern } from "@/components/ui/MountainPattern";
+import { getServices } from "@/lib/data";
 import { whatsappLink } from "@/lib/whatsapp";
 
 // Phase 1 placeholder: proves the layout shell and design tokens. Replaced in Phase 4.
@@ -49,6 +50,21 @@ export default function Home() {
             </a>
           </div>
           <Disclaimer className="mt-10 max-w-2xl" />
+        </div>
+      </section>
+
+      <section className="section-padding">
+        <div className="container-site">
+          <p className="eyebrow">Practice areas</p>
+          <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {getServices().map((service) => (
+              <li key={service.slug} className="card">
+                <h3 className="text-2xl">{service.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed">{service.summary}</p>
+                <DraftBadge status={service.status} className="mt-4" />
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
     </>

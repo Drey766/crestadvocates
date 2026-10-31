@@ -1,0 +1,20 @@
+[
+  {
+    "step": 1,
+    "title": "Reach out",
+    "description": "Call us, send a message on WhatsApp or use the consultation form. Tell us briefly what you need help with, without confidential details.",
+    "status": "draft"
+  },
+  {
+    "step": 2,
+    "title": "Consultation",
+    "description": "We listen, ask the right questions and take the time to understand your situation and what matters to you.",
+    "status": "draft"
+  },
+  {
+    "step": 3,
+    "title": "A clear plan",
+    "description": "We explain your options and the next steps in plain English, so you can make decisions with confidence.",
+    "status": "draft"
+  }
+]

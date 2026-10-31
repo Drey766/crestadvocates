@@ -1,0 +1,314 @@
+[
+  {
+    "slug": "business-legal-retainer",
+    "title": "Business Legal Retainer",
+    "icon": "Handshake",
+    "audience": ["businesses"],
+    "summary": "We don't just show up when things go wrong. On retainer, we become your legal partner.",
+    "overview": [
+      "At Crest Advocates, we don't just show up when things go wrong. On retainer, we become your legal partner.",
+      "We learn your business, understand your goals and give you direct, priority access to our team, so you can make decisions with confidence.",
+      "Ready to put us on retainer? Send us a message today and let's talk about a plan that fits you."
+    ],
+    "howWeHelp": [
+      "Fast responses when it matters",
+      "Advice that fits your business",
+      "Fixed, predictable fees",
+      "Problems solved before they grow"
+    ],
+    "whatToExpect": [
+      "A first conversation about your business, how it runs and where you need legal support.",
+      "An agreed retainer plan, so you know what is covered before work begins.",
+      "Direct, priority access to our team when questions come up.",
+      "Regular contact, so we understand your business well enough to spot issues early."
+    ],
+    "faqs": [
+      {
+        "q": "What is a legal retainer?",
+        "a": "A retainer is an ongoing arrangement in which a law firm acts as your business's legal partner, rather than being instructed only when a problem arises. The scope of the retainer is agreed with you at the start."
+      },
+      {
+        "q": "How are retainer fees set?",
+        "a": "Retainer fees are fixed and predictable, and they are agreed with you before the retainer begins. We will discuss what fits your business when we speak."
+      },
+      {
+        "q": "How do we start?",
+        "a": "Send us a message on WhatsApp, call us, or use the consultation form. We will arrange a conversation about your business and the support you need."
+      }
+    ],
+    "featured": true,
+    "status": "confirmed"
+  },
+  {
+    "slug": "corporate-commercial-law",
+    "title": "Corporate & Commercial Law",
+    "icon": "Building2",
+    "audience": ["businesses"],
+    "summary": "Legal support for setting up a company, putting agreements in writing and keeping your business compliant as it grows.",
+    "overview": [
+      "Every business, from a new start-up to an established company, depends on sound legal foundations. The right structure, clear agreements and good records make it easier to grow, take on partners and avoid disputes.",
+      "We help business owners understand their options in plain English, prepare and review the documents that matter, and keep up with the obligations that come with running a company in Kenya."
+    ],
+    "howWeHelp": [
+      "Advising on choosing a business structure and registering a company",
+      "Drafting and reviewing commercial contracts and agreements",
+      "Shareholder and partnership agreements",
+      "Company secretarial and compliance matters",
+      "Reviewing terms before you sign with suppliers, customers or partners"
+    ],
+    "whatToExpect": [
+      "We start by understanding your business and what you want to achieve.",
+      "We explain your options and the documents involved in plain language.",
+      "We prepare or review the documents and talk you through anything that needs your decision.",
+      "You receive final documents you understand, with clear next steps."
+    ],
+    "faqs": [
+      {
+        "q": "Do I need an advocate to register a company?",
+        "a": "It is possible to register a company without an advocate, but legal advice can help you choose the right structure and put the right agreements in place between the people involved from the start."
+      },
+      {
+        "q": "Can you review a contract someone else has drafted?",
+        "a": "Yes. We can review a contract before you sign it and explain what it means for you, including anything that may need to be negotiated."
+      }
+    ],
+    "status": "draft"
+  },
+  {
+    "slug": "employment-labour-law",
+    "title": "Employment & Labour Law",
+    "icon": "BriefcaseBusiness",
+    "audience": ["businesses", "individuals"],
+    "summary": "Clear guidance for employers and employees on contracts, workplace policies and employment disputes.",
+    "overview": [
+      "Employment relationships run more smoothly when both sides understand their rights and obligations. The Employment Act and related laws set out many of those rights, and getting them right protects employers and employees alike.",
+      "We advise employers on putting sound contracts and policies in place, and we help both employers and employees understand where they stand when a workplace issue arises."
+    ],
+    "howWeHelp": [
+      "Preparing and reviewing employment contracts",
+      "Drafting workplace policies and staff handbooks",
+      "Guidance on disciplinary processes and terminations",
+      "Advice for employees on contracts and workplace concerns",
+      "Representation in employment disputes"
+    ],
+    "whatToExpect": [
+      "We listen to your situation and ask for the relevant documents, such as contracts or letters.",
+      "We explain how the law applies in general terms and what your options are.",
+      "We agree the next steps with you, whether that is drafting, negotiating or representing you."
+    ],
+    "faqs": [
+      {
+        "q": "Do you act for employers or employees?",
+        "a": "We can act for either, depending on the matter. We will always check for any conflict of interest before we take on a new matter."
+      },
+      {
+        "q": "What should I bring to discuss an employment issue?",
+        "a": "Bring your employment contract, any letters or emails about the issue, and a short timeline of what happened. Please do not send confidential details through the website form."
+      }
+    ],
+    "status": "draft"
+  },
+  {
+    "slug": "debt-recovery",
+    "title": "Debt Recovery",
+    "icon": "Receipt",
+    "audience": ["businesses"],
+    "summary": "A measured, professional approach to recovering money owed to your business.",
+    "overview": [
+      "Unpaid invoices affect cash flow and take time away from running your business. A clear, professional approach often resolves matters before they escalate.",
+      "We help businesses review what is owed, communicate formally with the debtor, and consider the options available if payment is still not made."
+    ],
+    "howWeHelp": [
+      "Reviewing the documents behind the debt",
+      "Preparing formal demand letters",
+      "Negotiating payment arrangements",
+      "Advising on court or other recovery options where needed",
+      "Helping you tighten terms of trade to reduce future risk"
+    ],
+    "whatToExpect": [
+      "We review your invoices, agreements and correspondence with the debtor.",
+      "We explain the options and what each would involve.",
+      "We act on your instructions and keep you informed at each stage."
+    ],
+    "faqs": [
+      {
+        "q": "What documents do you need to start?",
+        "a": "Usually the agreement or order, the invoices, any delivery records and the correspondence with the debtor. We will tell you if anything else is needed."
+      },
+      {
+        "q": "Does a demand letter always resolve the matter?",
+        "a": "Not always. Many matters settle after a formal demand, but each case is different. We will discuss the realistic options for your situation."
+      }
+    ],
+    "status": "draft"
+  },
+  {
+    "slug": "intellectual-property",
+    "title": "Intellectual Property",
+    "icon": "Lightbulb",
+    "audience": ["businesses"],
+    "summary": "Helping you protect your brand, your name and the work your business creates.",
+    "overview": [
+      "Your business name, logo and the work you create can be among your most valuable assets. Protecting them early makes it easier to stop others from using them and to build your brand with confidence.",
+      "We help businesses understand which forms of protection may apply, such as trade marks, and guide them through the registration process."
+    ],
+    "howWeHelp": [
+      "Advice on protecting your brand and business name",
+      "Trade mark searches and applications",
+      "Reviewing licensing and assignment agreements",
+      "Advising on suspected infringement"
+    ],
+    "whatToExpect": [
+      "We discuss what you want to protect and how you use it in your business.",
+      "We explain the forms of protection that may be available.",
+      "We guide you through the application or agreement, step by step."
+    ],
+    "faqs": [
+      {
+        "q": "Is registering a business name the same as registering a trade mark?",
+        "a": "No. Registering a business name and registering a trade mark are separate processes that do different things. We can explain the difference for your situation."
+      },
+      {
+        "q": "Should I protect my brand before launching?",
+        "a": "It is generally wise to check whether a name or logo is available, and to consider protection, before investing heavily in it."
+      }
+    ],
+    "status": "draft"
+  },
+  {
+    "slug": "conveyancing-real-estate",
+    "title": "Conveyancing & Real Estate",
+    "icon": "House",
+    "audience": ["individuals", "businesses"],
+    "summary": "Careful legal support when you buy, sell, lease or charge land and property.",
+    "overview": [
+      "Buying or selling property is one of the most significant transactions many people make. Careful checks before money changes hands, and properly prepared documents, help protect your investment.",
+      "We guide individuals and businesses through property transactions in plain language, from the first searches to the registration of the transfer under the Land Registration Act."
+    ],
+    "howWeHelp": [
+      "Carrying out searches and due diligence on land and property",
+      "Preparing and reviewing sale agreements",
+      "Handling transfers and registration",
+      "Preparing and reviewing leases",
+      "Advising on charges and property used as security"
+    ],
+    "whatToExpect": [
+      "We discuss the property and the transaction, and ask for the documents you have.",
+      "We carry out the checks and explain what we find.",
+      "We prepare or review the agreement and guide you through completion and registration."
+    ],
+    "faqs": [
+      {
+        "q": "When should I involve an advocate in a land purchase?",
+        "a": "Ideally before you pay anything or sign any agreement, so that the property can be checked first."
+      },
+      {
+        "q": "Can you act if I am buying land outside the area I live in?",
+        "a": "Please get in touch with the details. We will let you know how we can help."
+      }
+    ],
+    "status": "draft"
+  },
+  {
+    "slug": "civil-litigation-dispute-resolution",
+    "title": "Civil Litigation & Dispute Resolution",
+    "icon": "MessagesSquare",
+    "audience": ["individuals", "businesses"],
+    "summary": "Clear advice and strong representation when a dispute needs to be resolved.",
+    "overview": [
+      "Disputes are stressful and can be costly. Understanding your position early helps you make better decisions about how to resolve them.",
+      "We advise individuals and businesses on their options, which may include negotiation, mediation, arbitration or court proceedings, and represent them through the process."
+    ],
+    "howWeHelp": [
+      "Assessing your position and explaining your options",
+      "Negotiating settlements",
+      "Representation in mediation and arbitration",
+      "Representation in court proceedings",
+      "Advice on enforcing judgments and agreements"
+    ],
+    "whatToExpect": [
+      "We listen to your account and review the documents involved.",
+      "We give you an honest view of your options and the possible routes forward.",
+      "We agree a plan with you and keep you informed at every stage."
+    ],
+    "faqs": [
+      {
+        "q": "Does every dispute need to go to court?",
+        "a": "No. Many disputes can be resolved through negotiation or other forms of dispute resolution. We will talk you through the options that may suit your situation."
+      },
+      {
+        "q": "I have received court papers. What should I do?",
+        "a": "Contact an advocate promptly and keep the documents safe. Court processes have their own deadlines, so it is important not to delay."
+      }
+    ],
+    "status": "draft"
+  },
+  {
+    "slug": "family-law",
+    "title": "Family Law",
+    "icon": "UsersRound",
+    "audience": ["individuals"],
+    "summary": "Sensitive, confidential guidance on family matters, from separation to children's welfare.",
+    "overview": [
+      "Family matters are personal and often difficult. You deserve advice that is clear, discreet and focused on what matters most to you and your family.",
+      "We help individuals understand their options on matters such as divorce, separation, custody, maintenance and matrimonial property, and we support them through negotiation or proceedings where needed."
+    ],
+    "howWeHelp": [
+      "Advice on divorce and separation",
+      "Child custody and maintenance",
+      "Matrimonial property matters",
+      "Preparing agreements between parties",
+      "Representation in family proceedings"
+    ],
+    "whatToExpect": [
+      "A confidential conversation about your situation and your priorities.",
+      "A clear explanation of your options in plain language.",
+      "Support at each step, with care for the people involved."
+    ],
+    "faqs": [
+      {
+        "q": "Will my discussion with you be kept confidential?",
+        "a": "Yes. Confidentiality is central to how we work. Please share personal details with us directly when we speak, not through the website form."
+      },
+      {
+        "q": "Can family matters be resolved without going to court?",
+        "a": "Sometimes. Depending on the circumstances, negotiation or mediation may be possible. We will explain the options that may apply to you."
+      }
+    ],
+    "status": "draft"
+  },
+  {
+    "slug": "succession-probate",
+    "title": "Wills, Succession & Probate",
+    "icon": "ScrollText",
+    "audience": ["individuals"],
+    "summary": "Planning ahead with a will, and guiding families through succession when a loved one has died.",
+    "overview": [
+      "A will lets you decide how your property is shared and who will manage your estate. Planning ahead can spare your family uncertainty and disagreement at a difficult time.",
+      "When someone has died, their family often needs to apply for a grant before the estate can be administered. We guide families through that process under the Law of Succession Act, with patience and care."
+    ],
+    "howWeHelp": [
+      "Preparing and updating wills",
+      "Advice on estate planning",
+      "Applications for grants of representation",
+      "Guidance on administering an estate",
+      "Advice on disputes over an estate"
+    ],
+    "whatToExpect": [
+      "We talk through your family, your property and your wishes, or the circumstances of the estate.",
+      "We explain the process and the documents involved.",
+      "We prepare the documents and guide you through each step."
+    ],
+    "faqs": [
+      {
+        "q": "Why should I make a will?",
+        "a": "A will lets you decide who inherits your property and who manages your estate. Without one, the law decides how your estate is shared, which may not reflect your wishes."
+      },
+      {
+        "q": "A family member has died. Where do we start?",
+        "a": "Gather the documents you can, such as the death certificate and details of the property, and speak to an advocate about the process for your family's situation."
+      }
+    ],
+    "status": "draft"
+  }
+]
