@@ -36,6 +36,11 @@
         "a": "Send us a message on WhatsApp, call us, or use the consultation form. We will arrange a conversation about your business and the support you need."
       }
     ],
+    "relatedPosts": [
+      "why-every-growing-business-needs-a-legal-retainer",
+      "starting-a-company-in-kenya-what-to-know-before-you-register",
+      "5-things-to-look-for-when-choosing-an-advocate"
+    ],
     "featured": true,
     "status": "confirmed"
   },
@@ -72,6 +77,10 @@
         "a": "Yes. We can review a contract before you sign it and explain what it means for you, including anything that may need to be negotiated."
       }
     ],
+    "relatedPosts": [
+      "starting-a-company-in-kenya-what-to-know-before-you-register",
+      "why-every-growing-business-needs-a-legal-retainer"
+    ],
     "status": "draft"
   },
   {
@@ -105,6 +114,10 @@
         "q": "What should I bring to discuss an employment issue?",
         "a": "Bring your employment contract, any letters or emails about the issue, and a short timeline of what happened. Please do not send confidential details through the website form."
       }
+    ],
+    "relatedPosts": [
+      "why-every-growing-business-needs-a-legal-retainer",
+      "what-to-expect-at-your-first-legal-consultation"
     ],
     "status": "draft"
   },
@@ -140,6 +153,10 @@
         "a": "Not always. Many matters settle after a formal demand, but each case is different. We will discuss the realistic options for your situation."
       }
     ],
+    "relatedPosts": [
+      "why-every-growing-business-needs-a-legal-retainer",
+      "what-to-expect-at-your-first-legal-consultation"
+    ],
     "status": "draft"
   },
   {
@@ -172,6 +189,10 @@
         "q": "Should I protect my brand before launching?",
         "a": "It is generally wise to check whether a name or logo is available, and to consider protection, before investing heavily in it."
       }
+    ],
+    "relatedPosts": [
+      "starting-a-company-in-kenya-what-to-know-before-you-register",
+      "why-every-growing-business-needs-a-legal-retainer"
     ],
     "status": "draft"
   },
@@ -207,6 +228,10 @@
         "a": "Please get in touch with the details. We will let you know how we can help."
       }
     ],
+    "relatedPosts": [
+      "buying-land-in-kenya-due-diligence-before-you-pay",
+      "wills-and-succession-why-planning-ahead-protects-your-family"
+    ],
     "status": "draft"
   },
   {
@@ -240,6 +265,10 @@
         "q": "I have received court papers. What should I do?",
         "a": "Contact an advocate promptly and keep the documents safe. Court processes have their own deadlines, so it is important not to delay."
       }
+    ],
+    "relatedPosts": [
+      "what-to-expect-at-your-first-legal-consultation",
+      "5-things-to-look-for-when-choosing-an-advocate"
     ],
     "status": "draft"
   },
@@ -275,6 +304,10 @@
         "a": "Sometimes. Depending on the circumstances, negotiation or mediation may be possible. We will explain the options that may apply to you."
       }
     ],
+    "relatedPosts": [
+      "wills-and-succession-why-planning-ahead-protects-your-family",
+      "what-to-expect-at-your-first-legal-consultation"
+    ],
     "status": "draft"
   },
   {
@@ -308,6 +341,10 @@
         "q": "A family member has died. Where do we start?",
         "a": "Gather the documents you can, such as the death certificate and details of the property, and speak to an advocate about the process for your family's situation."
       }
+    ],
+    "relatedPosts": [
+      "wills-and-succession-why-planning-ahead-protects-your-family",
+      "buying-land-in-kenya-due-diligence-before-you-pay"
     ],
     "status": "draft"
   }

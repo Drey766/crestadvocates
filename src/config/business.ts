@@ -175,6 +175,54 @@ export const business = {
     credentials: [] as string[],                // TODO — firm-level memberships, if any
   },
 
+  // ── SERVICES PAGES COPY ──
+  services: {
+    eyebrow: "Services",
+    heading: "Legal support for businesses, individuals and families",
+    intro:
+      "Whether you run a business or need help with a personal or family matter, we listen first, explain your options in plain English and stand by you through the process.",
+    gridHeading: "Practice areas",
+    filterLabel: "Show services for",
+    filters: { all: "All", businesses: "For Businesses", individuals: "For Individuals & Families" },
+    resultsLabel: (count: number) => `Showing ${count} ${count === 1 ? "service" : "services"}`,
+    featuredLabel: "Featured",
+    learnMore: "Learn more",
+    audienceLabels: { businesses: "For businesses", individuals: "For individuals and families" },
+    detail: {
+      backLabel: "All services",
+      overviewHeading: "Overview",
+      howWeHelpHeading: "How we can help",
+      whatToExpectHeading: "What to expect",
+      faqsHeading: "Common questions",
+      insightsHeading: "Related insights",
+      asideHeading: "Talk to us",
+      asideText: "Tell us briefly what you need. We'll discuss the details properly once we speak.",
+      ctaText: "Get in touch to talk through your situation and your options.",
+    },
+    whatsappPrefill: (service: string) => `Hello Crest Advocates, I'd like to ask about ${service}.`,
+  },
+
+  // ── TEAM PAGES COPY ──
+  team: {
+    eyebrow: "Our team",
+    heading: "The people you'll work with",
+    intro: "Clear counsel and strong representation start with people who listen. Meet the team at Crest Advocates.",
+    gridHeading: "Our team",
+    profileLabel: "View profile",
+    backLabel: "Our team",
+    bioHeading: "About",
+    detailLabels: {
+      qualifications: "Qualifications",
+      admissions: "Admissions",
+      practiceAreas: "Practice areas",
+      skills: "Skills",
+      languages: "Languages",
+      memberships: "Memberships",
+    },
+    emailLabel: "Email",
+    linkedinLabel: "LinkedIn",
+  },
+
   // ── COLOURS ── (sampled from the logo — see Design System)
   colors: {
     navy: "#03112C",

@@ -5,6 +5,7 @@ export interface Service {
   audience: ("businesses" | "individuals")[];
   summary: string; overview: string[]; howWeHelp: string[]; whatToExpect: string[];
   faqs: { q: string; a: string }[];
+  relatedPosts?: string[]; // Insights post slugs
   featured?: boolean; status: "confirmed" | "draft";
 }
 export interface TeamMember {

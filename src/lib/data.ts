@@ -26,19 +26,20 @@ const serviceSchema: z.ZodType<Service> = z.object({
   howWeHelp: z.array(text),
   whatToExpect: z.array(text),
   faqs: z.array(z.object({ q: text, a: text })),
+  relatedPosts: z.array(text).optional(),
   featured: z.boolean().optional(),
   status,
 });
 
-// Optional profile fields may be empty: the UI hides them.
+// Only slug and name are required. Every other profile field may be empty: the UI hides it.
 const teamMemberSchema: z.ZodType<TeamMember> = z.object({
   slug: text,
   name: text,
-  title: text,
+  title: z.string().trim(),
   titleStatus: z.literal("confirm").optional(),
-  photo: z.string().startsWith("/images/"),
+  photo: z.union([z.literal(""), z.string().startsWith("/images/")]),
   photoPosition: z.string().optional(),
-  shortBio: text,
+  shortBio: z.string().trim(),
   bio: z.array(text),
   qualifications: z.array(text),
   admissions: z.array(text),
@@ -104,6 +105,15 @@ const processSteps = load("process.json", processStepSchema, processJson, (p) =>
   (a, b) => a.step - b.step,
 );
 
+// services.json may only point at posts that exist
+for (const service of services) {
+  for (const slug of service.relatedPosts ?? []) {
+    if (!posts.some((p) => p.slug === slug)) {
+      throw new Error(`src/data/services.json: "${service.slug}" lists unknown related post "${slug}"`);
+    }
+  }
+}
+
 // ── Services ── featured first, then file order
 export function getServices(): Service[] {
   return [...services].sort((a, b) => Number(b.featured ?? false) - Number(a.featured ?? false));
@@ -111,6 +121,12 @@ export function getServices(): Service[] {
 
 export function getServiceBySlug(slug: string): Service | undefined {
   return services.find((s) => s.slug === slug);
+}
+
+/** Published Insights posts linked from a service, in the order listed. */
+export function getRelatedPosts(service: Service): BlogPost[] {
+  const published = getPosts();
+  return (service.relatedPosts ?? []).flatMap((slug) => published.filter((p) => p.slug === slug));
 }
 
 // ── Team ──

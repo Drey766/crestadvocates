@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { business } from "@/config/business";
 import type { Service } from "@/types";
 import { DraftBadge } from "@/components/ui/DraftBadge";
 import { ServiceIcon } from "@/components/ui/ServiceIcon";
@@ -18,7 +19,7 @@ export function ServiceCard({ service }: { service: Service }) {
       <p className="mt-2 flex-1 text-sm leading-relaxed">{service.summary}</p>
       <span className="mt-5 flex flex-wrap items-center justify-between gap-2">
         <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-navy">
-          Learn more
+          {business.services.learnMore}
           <ArrowRight aria-hidden="true" className="size-4 transition-transform group-hover:translate-x-0.5" />
         </span>
         <DraftBadge status={service.status} />
