@@ -2,12 +2,15 @@
   {
     "slug": "lynn-ngugi",
     "name": "Lynn Ngugi",
-    "title": "Founder & Managing Advocate",
-    "titleStatus": "confirm",
+    "title": "Founder & CEO",
     "photo": "/images/team/lynn-ngugi.jpg",
     "photoPosition": "50% 40%",
-    "shortBio": "Lynn Ngugi leads Crest Advocates, a firm built around clear counsel and strong representation.",
-    "bio": [],
+    "shortBio": "Lynn Ngugi is the founder and CEO of Crest Advocates, a firm built around clear counsel and strong representation.",
+    "bio": [
+      "Lynn Ngugi founded Crest Advocates with a clear idea of what clients should be able to expect from their lawyers: advice they can understand, representation they can rely on, and a team that stands by them when it matters most.",
+      "As the firm's CEO, Lynn leads its approach to client service. That means listening first, understanding what is at stake for each client, and explaining options in plain English so that people can make decisions with confidence.",
+      "Crest Advocates works with individuals, families and businesses. Alongside one-off matters, the firm offers legal retainers that let businesses work with it as an ongoing legal partner rather than only calling when something goes wrong. Professionalism, integrity and a client-focused approach guide every matter the firm handles."
+    ],
     "qualifications": [],
     "admissions": [],
     "practiceAreas": [],
