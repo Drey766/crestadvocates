@@ -33,17 +33,20 @@ export function LogoStacked({ className, priority }: { className?: string; prior
   );
 }
 
-/** Navbar/footer lockup: shield plus live-text wordmark. */
+/**
+ * Navbar/footer lockup: shield plus live-text wordmark. Capitals come from CSS and the
+ * two words are space-separated, so the text reads as the firm name ("Crest Advocates").
+ */
 export function LogoLockup({ className }: { className?: string }) {
   return (
     <span className={cn("flex items-center gap-3", className)}>
       <LogoShield size={34} />
       <span className="flex flex-col leading-none">
-        <span className="font-display text-2xl font-semibold tracking-[0.25em] text-white">
-          {business.shortName.toUpperCase()}
-        </span>
-        <span className="mt-1 text-[0.6rem] font-semibold tracking-[0.42em] text-gold">
-          {business.descriptor.toUpperCase()}
+        <span className="font-display text-2xl font-semibold uppercase tracking-[0.25em] text-white">
+          {business.shortName}
+        </span>{" "}
+        <span className="mt-1 text-[0.6rem] font-semibold uppercase tracking-[0.42em] text-gold">
+          {business.descriptor}
         </span>
       </span>
     </span>

@@ -14,6 +14,7 @@ async function CopyrightYear() {
   return <>{new Date().getFullYear()}</>;
 }
 
+const ui = business.copy.ui;
 const linkClass = "inline-flex min-h-11 items-center text-sm transition-colors hover:text-gold";
 
 export function Footer() {
@@ -35,8 +36,8 @@ export function Footer() {
             <p className="mt-2 text-sm">{business.copy.footerLine}</p>
           </div>
 
-          <nav aria-label="Footer">
-            <h2 className="eyebrow font-sans">Explore</h2>
+          <nav aria-label={ui.footerNavLabel}>
+            <h2 className="eyebrow font-sans">{ui.footerExplore}</h2>
             <ul className="mt-3">
               {mainNav.map((item) => (
                 <li key={item.href}>
@@ -49,7 +50,7 @@ export function Footer() {
           </nav>
 
           <div>
-            <h2 className="eyebrow font-sans">Contact</h2>
+            <h2 className="eyebrow font-sans">{ui.footerContact}</h2>
             <ul className="mt-3">
               <li>
                 <a href={business.phoneHref} className={linkClass}>
@@ -58,7 +59,7 @@ export function Footer() {
               </li>
               <li>
                 <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className={linkClass}>
-                  WhatsApp
+                  {ui.whatsapp}
                 </a>
               </li>
               {business.email && (

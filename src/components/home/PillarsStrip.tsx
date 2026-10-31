@@ -5,7 +5,7 @@ import { DraftBadge } from "@/components/ui/DraftBadge";
 export function PillarsStrip() {
   const { pillarNotes, pillarNotesStatus } = business.home;
   return (
-    <section aria-label="What we protect" className="on-navy border-t border-navy-line">
+    <section aria-label={business.copy.ui.pillarsLabel} className="on-navy border-t border-navy-line">
       <ul className="container-site grid divide-y divide-navy-line md:grid-cols-3 md:divide-x md:divide-y-0">
         {business.pillars.map((pillar, i) => (
           <li key={pillar} className="py-8 md:px-8 md:py-12 md:first:pl-0 md:last:pr-0">

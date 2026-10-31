@@ -8,7 +8,7 @@ export function Navbar() {
   return (
     <header className="on-navy sticky top-0 z-40 border-b border-navy-line">
       <div className="container-site relative flex h-16 items-center justify-between gap-4 lg:h-20">
-        <Link href="/" className="inline-flex min-h-11 items-center" aria-label={`${business.name}, home`}>
+        <Link href="/" className="inline-flex min-h-11 items-center" aria-label={`${business.name}, ${business.copy.ui.homeLinkSuffix}`}>
           <LogoLockup />
         </Link>
         <div className="flex items-center gap-4">

@@ -85,14 +85,15 @@ export function ContactDetails() {
 
 function Detail({ icon, label, children }: { icon: ReactNode; label: string; children: ReactNode }) {
   return (
-    <div className="flex gap-3">
-      <span aria-hidden="true" className="mt-3 text-gold">
-        {icon}
-      </span>
-      <div>
-        <dt className="text-xs font-semibold uppercase tracking-[0.2em]">{label}</dt>
-        <dd className="flex flex-col">{children}</dd>
-      </div>
+    // A <div> inside a <dl> may only hold <dt>/<dd>, so the icon sits in the <dt>; pl-7 = icon + gap
+    <div>
+      <dt className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em]">
+        <span aria-hidden="true" className="text-gold">
+          {icon}
+        </span>
+        {label}
+      </dt>
+      <dd className="flex flex-col pl-7">{children}</dd>
     </div>
   );
 }

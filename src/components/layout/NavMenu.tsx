@@ -8,6 +8,8 @@ import { business } from "@/config/business";
 import { mainNav } from "@/config/nav";
 import { cn } from "@/lib/utils";
 
+const ui = business.copy.ui;
+
 function isActive(pathname: string | null, href: string) {
   if (!pathname) return false;
   return href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
@@ -28,7 +30,7 @@ export function NavMenu({ pathname }: { pathname: string | null }) {
 
   return (
     <>
-      <nav aria-label="Main" className="hidden lg:block">
+      <nav aria-label={ui.mainNavLabel} className="hidden lg:block">
         <ul className="flex items-center gap-1">
           {mainNav.map((item) => {
             const active = isActive(pathname, item.href);
@@ -59,7 +61,7 @@ export function NavMenu({ pathname }: { pathname: string | null }) {
         className="inline-flex size-11 items-center justify-center text-white lg:hidden"
         aria-expanded={open}
         aria-controls="mobile-menu"
-        aria-label={open ? "Close menu" : "Open menu"}
+        aria-label={open ? ui.closeMenu : ui.openMenu}
         onClick={() => setOpen((v) => !v)}
       >
         {open ? <X aria-hidden="true" className="size-6" /> : <Menu aria-hidden="true" className="size-6" />}
@@ -68,7 +70,7 @@ export function NavMenu({ pathname }: { pathname: string | null }) {
       {open && (
         <nav
           id="mobile-menu"
-          aria-label="Mobile"
+          aria-label={ui.mobileNavLabel}
           className="absolute inset-x-0 top-full border-t border-navy-line bg-navy pb-6 shadow-lg lg:hidden"
         >
           <ul className="container-site flex flex-col py-2">

@@ -61,6 +61,23 @@ export const business = {
     footerLine: "Clear counsel. Strong representation.",
     finalCtaHeading: "Ready to take the next step?",
     finalCtaText: "Get in touch for legal guidance you can rely on.",
+    // Site chrome: skip link, navbar, footer, mobile bar and landmark names
+    ui: {
+      skipLink: "Skip to content",
+      homeLinkSuffix: "home",
+      openMenu: "Open menu",
+      closeMenu: "Close menu",
+      mainNavLabel: "Main",
+      mobileNavLabel: "Mobile",
+      footerNavLabel: "Footer",
+      footerExplore: "Explore",
+      footerContact: "Contact",
+      quickContactLabel: "Quick contact",
+      call: "Call",
+      whatsapp: "WhatsApp",
+      book: "Book",
+      pillarsLabel: "What we protect",
+    },
   },
 
   // ── VALUES ── titles are the firm's own words; descriptions are drafts
