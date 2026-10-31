@@ -1,5 +1,5 @@
 import { business } from "@/config/business";
-import type { TeamMember } from "@/types";
+import type { BlogPost, TeamMember } from "@/types";
 import { siteUrl } from "@/lib/utils";
 
 /** Serialise JSON-LD safely for a <script> tag (escapes "<" to block injection). */
@@ -63,5 +63,25 @@ export function personSchema(member: TeamMember) {
       : {}),
     worksFor: { "@type": "LegalService", name: business.name, url: siteUrl },
     ...(sameAs.length > 0 ? { sameAs } : {}),
+  };
+}
+
+/** Article schema for an Insights post. Authored and published by the firm. */
+export function articleSchema(post: BlogPost) {
+  const url = `${siteUrl}/blog/${post.slug}`;
+  const firm = { "@type": "LegalService", name: business.name, url: siteUrl };
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    url,
+    mainEntityOfPage: url,
+    datePublished: post.created_at,
+    articleSection: post.category,
+    image: `${siteUrl}/images/og-image.jpg`,
+    author: post.author_name === business.name ? firm : { "@type": "Person", name: post.author_name },
+    publisher: { ...firm, logo: { "@type": "ImageObject", url: `${siteUrl}/images/logo-stacked.jpg` } },
   };
 }

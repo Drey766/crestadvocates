@@ -17,6 +17,7 @@
   --color-ink: var(--brand-ink);
   --color-slate: var(--brand-slate);
   --color-muted-on-navy: var(--brand-muted-on-navy);
+  --color-danger: var(--brand-danger);
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-cormorant), ui-serif, Georgia, serif;
@@ -109,6 +110,9 @@
   /* ── Forms ── */
   .label {
     @apply mb-2 block text-sm font-medium text-ink;
+  }
+  .input[aria-invalid="true"] {
+    @apply border-danger;
   }
   .input {
     @apply block min-h-12 w-full rounded-sm border border-slate/40 bg-white px-4 py-3 text-base text-ink placeholder:text-slate/70 focus:border-navy focus:outline-none focus:ring-2 focus:ring-navy/30;

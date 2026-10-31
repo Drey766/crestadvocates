@@ -6,6 +6,7 @@
 // The `z.ZodType<…>` annotations keep these schemas in step with src/types.
 
 import { z } from "zod";
+import { business } from "@/config/business";
 import type { BlogPost, FAQ, ProcessStep, Service, TeamMember } from "@/types";
 import servicesJson from "@/data/services.json";
 import teamJson from "@/data/team.json";
@@ -114,6 +115,14 @@ for (const service of services) {
   }
 }
 
+// Guardrail: every Insights post ends with the "not legal advice" notice
+for (const post of posts) {
+  const tail = post.content.replace(/<[^>]+>/g, "").trim();
+  if (!tail.endsWith(business.legal.articleNotice)) {
+    throw new Error(`src/data/blogs.json: "${post.slug}" must end with "${business.legal.articleNotice}"`);
+  }
+}
+
 // ── Services ── featured first, then file order
 export function getServices(): Service[] {
   return [...services].sort((a, b) => Number(b.featured ?? false) - Number(a.featured ?? false));
@@ -147,6 +156,20 @@ export function getPosts(): BlogPost[] {
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
   return getPosts().find((p) => p.slug === slug);
+}
+
+/** Categories of published posts, in first-seen order (newest first). */
+export function getPostCategories(): string[] {
+  return [...new Set(getPosts().map((p) => p.category))];
+}
+
+/** Other published posts, same category first. */
+export function getMorePosts(post: BlogPost, count = 3): BlogPost[] {
+  const others = getPosts().filter((p) => p.slug !== post.slug);
+  return [...others.filter((p) => p.category === post.category), ...others.filter((p) => p.category !== post.category)].slice(
+    0,
+    count,
+  );
 }
 
 // ── FAQs and process ──

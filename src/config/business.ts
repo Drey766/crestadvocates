@@ -45,6 +45,8 @@ export const business = {
     formNotice:
       "Please don't include confidential details here. We'll discuss your matter properly once we speak.",
     dataProtectionAct: "Data Protection Act, 2019",
+    // Every Insights post must end with this sentence (checked when src/data/blogs.json loads)
+    articleNotice: "Laws change; speak to an advocate about your situation.",
   },
 
   // ── VOICE / MICRO-COPY ──
@@ -223,6 +225,180 @@ export const business = {
     linkedinLabel: "LinkedIn",
   },
 
+  // ── INSIGHTS (BLOG) COPY ──
+  insights: {
+    eyebrow: "Insights",
+    heading: "General legal information, in plain English",
+    intro:
+      "Short guides to common legal questions for individuals, families and businesses in Kenya. General information only, not legal advice.",
+    featuredLabel: "Latest",
+    filterLabel: "Show insights about",
+    allLabel: "All topics",
+    resultsLabel: (count: number) => `Showing ${count} ${count === 1 ? "article" : "articles"}`,
+    readTime: (minutes: number) => `${minutes} min read`,
+    readLabel: "Read article",
+    backLabel: "All insights",
+    byLabel: "By",
+    relatedHeading: "More insights",
+    ctaHeading: "Have a question about your own situation?",
+    ctaText: "Every matter is different. Talk to us about yours and we'll explain your options clearly.",
+  },
+
+  // ── CONTACT PAGE COPY ──
+  contact: {
+    eyebrow: "Contact",
+    heading: "Schedule a Consultation",
+    intro:
+      "Tell us briefly what you need and how you would like us to reach you. For the quickest response, call us or send a message on WhatsApp.",
+    detailsHeading: "Reach us directly",
+    labels: { phone: "Phone", whatsapp: "WhatsApp", email: "Email", address: "Office", hours: "Hours" },
+    whatsappCta: "Message us on WhatsApp",
+    bookingHeading: "Book a time online",
+    bookingText: "Prefer to choose a time yourself? Use our online booking page.",
+    bookingCta: "Choose a time",
+    mapLabel: "View on map",
+    confidentialityHeading: "A note on confidentiality",
+    formHeading: "Consultation request",
+    formIntro: "Fields marked * are required.",
+    faqsHeading: "Common questions",
+    form: {
+      name: "Full name",
+      phone: "Phone",
+      email: "Email",
+      emailHint: "Needed only if you would like us to reply by email.",
+      clientType: "I am",
+      clientTypes: { individual: "An individual", business: "A business" },
+      areaOfLaw: "Area of law",
+      areaPlaceholder: "Select an area of law",
+      notSure: "Not sure yet",
+      preferredContact: "How should we contact you?",
+      contactMethods: { whatsapp: "WhatsApp", call: "Phone call", email: "Email" },
+      preferredDate: "Preferred date",
+      preferredTime: "Preferred time",
+      times: { morning: "Morning", afternoon: "Afternoon", evening: "Evening" },
+      anyTime: "Any time",
+      optional: "optional",
+      description: "Briefly, what do you need help with?",
+      charsLeft: (n: number) => `${n} characters left`,
+      consent: "I agree to Crest Advocates contacting me about this request, and I have read the",
+      consentLink: "privacy notice",
+      honeypot: "Leave this field empty",
+      submit: "Send request",
+      sending: "Sending…",
+      errorSummary: "Please check the highlighted fields.",
+      tooFast: "That was quick. Please check your details and send the request again.",
+      rateLimited: "We've received several requests from you in a short time. Please call or message us on WhatsApp instead.",
+      callCta: "Call",
+      errors: {
+        name: "Please enter your name.",
+        phone: "Please enter a phone number we can reach you on.",
+        email: "Please enter a valid email address.",
+        emailRequired: "Please enter your email address, or choose WhatsApp or a phone call.",
+        clientType: "Please tell us whether you are an individual or a business.",
+        areaOfLaw: "Please choose an area of law, or \"Not sure yet\".",
+        preferredContact: "Please choose how we should contact you.",
+        preferredDate: "Please enter a valid date.",
+        preferredTime: "Please choose a time of day.",
+        description: "Please keep your description to 600 characters or fewer.",
+        consent: "Please confirm that we may contact you about this request.",
+      },
+      whatsappFallbackPrefill: (name: string, area: string) =>
+        `Hello Crest Advocates, my name is ${name}. I'd like to request a consultation about ${area}.`,
+    },
+  },
+
+  // ── LEGAL PAGES ── drafts: the firm should have these reviewed before launch
+  privacy: {
+    heading: "Privacy notice",
+    intro:
+      "This notice explains, in plain English, what information this website collects, why, and what happens to it. It is written with Kenya's Data Protection Act, 2019 in mind.",
+    status: "draft",
+    sections: [
+      {
+        heading: "What we collect",
+        paragraphs: [
+          "When you send a consultation request, we collect the details you type into the form: your name, phone number, email address (if you give one), whether you are an individual or a business, the area of law, how and when you would like to be contacted, and the short description you choose to add.",
+          "Please do not include confidential or sensitive details in the form. We will discuss your matter properly once we speak.",
+        ],
+      },
+      {
+        heading: "Why we collect it",
+        paragraphs: [
+          "We use these details only to respond to your request and to arrange a consultation. We do not use them for marketing, and we do not sell or rent them to anyone.",
+        ],
+      },
+      {
+        heading: "How it is handled",
+        paragraphs: [
+          "Your request is sent to the firm by email through an email delivery provider. The website itself does not keep a copy of your request in a database.",
+          "To protect the form from abuse, the website briefly keeps a count of requests from each internet address. This count is held in memory only and is not linked to your name or message.",
+          "Our hosting provider may keep standard technical logs, such as internet addresses and the pages requested, to keep the website secure and running.",
+        ],
+      },
+      {
+        heading: "Cookies and tracking",
+        paragraphs: [
+          "This website does not use advertising or analytics cookies, and it does not use session-recording or heatmap tools.",
+          "If you choose to contact us on WhatsApp, the link opens WhatsApp, and WhatsApp's own privacy policy applies to that conversation.",
+        ],
+      },
+      {
+        heading: "How long we keep it",
+        paragraphs: [
+          "We keep your details only for as long as we need them to respond to you and, if you become a client, as our professional obligations require.",
+        ],
+      },
+      {
+        heading: "Your rights",
+        paragraphs: [
+          "Under the Data Protection Act, 2019, you can ask to see the personal information we hold about you, ask us to correct or delete it, and object to how we use it. You can also complain to the Office of the Data Protection Commissioner.",
+        ],
+      },
+    ],
+    contactHeading: "Contact us about your information",
+    contactText: "To ask a question about this notice or your information, please contact us:",
+  },
+
+  disclaimerPage: {
+    heading: "Disclaimer",
+    intro: "Please read this before relying on anything on this website.",
+    status: "draft",
+    sections: [
+      {
+        heading: "General information only",
+        paragraphs: [
+          "The articles, service descriptions and answers on this website are general information. They are not legal advice and should not be relied on as a substitute for advice about your own situation.",
+          "Laws and procedures change, and every matter turns on its own facts. Please speak to an advocate before acting on anything you read here.",
+        ],
+      },
+      {
+        heading: "No advocate–client relationship",
+        paragraphs: [
+          "Reading this website, calling us, messaging us or sending a consultation request does not by itself create an advocate–client relationship. That relationship begins only once we have agreed to act for you.",
+        ],
+      },
+      {
+        heading: "Confidentiality",
+        paragraphs: [
+          "Please do not send confidential or sensitive details through the contact form, by email or on WhatsApp before we have spoken. We will discuss your matter properly once we speak.",
+        ],
+      },
+      {
+        heading: "Links to other websites",
+        paragraphs: [
+          "Where this website links to other websites, such as WhatsApp or social media, we are not responsible for their content or how they handle your information.",
+        ],
+      },
+    ],
+  },
+
+  notFound: {
+    eyebrow: "Page not found",
+    heading: "We couldn't find that page.",
+    text: "The page may have moved, or the link may be incorrect. These links may help.",
+    homeLabel: "Go to the home page",
+  },
+
   // ── COLOURS ── (sampled from the logo — see Design System)
   colors: {
     navy: "#03112C",
@@ -237,6 +413,7 @@ export const business = {
     ink: "#03112C",
     slate: "#4A5568",
     mutedOnNavy: "#B9C2D3",
+    danger: "#991B1B",     // form error text on white/ivory (7.7:1 on white)
   },
 
   // ── FONTS ──
