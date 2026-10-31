@@ -61,6 +61,120 @@ export const business = {
     finalCtaText: "Get in touch for legal guidance you can rely on.",
   },
 
+  // ── VALUES ── titles are the firm's own words; descriptions are drafts
+  values: [
+    {
+      title: "Professionalism",
+      summary: "Careful, thorough work and clear communication at every stage of your matter.",
+      detail:
+        "We prepare carefully, communicate clearly and give every matter, large or small, the same attention. You should always know who is handling your matter and how to reach us.",
+      status: "draft",
+    },
+    {
+      title: "Integrity",
+      summary: "Honest advice about where you stand, including when the answer is not the one you hoped for.",
+      detail:
+        "We tell you plainly where you stand and what your options are. We are open about how we work, and what you share with us stays in confidence.",
+      status: "draft",
+    },
+    {
+      title: "Client-focused approach",
+      summary: "We listen first, and shape our advice around your goals and circumstances.",
+      detail:
+        "Every client's situation is different. We take the time to understand yours, explain things in plain English and stand by you when it matters most.",
+      status: "draft",
+    },
+  ],
+
+  // ── HOME PAGE COPY ──
+  home: {
+    // One sentence per entry in `pillars`, same order (draft)
+    pillarNotes: [
+      "We explain where you stand in plain English, so you understand your rights before you act.",
+      "We take the time to understand what matters to you, and shape our advice around it.",
+      "You have a team to turn to when questions come up, and we keep you informed along the way.",
+    ],
+    pillarNotesStatus: "draft",
+    practiceAreas: {
+      eyebrow: "Practice areas",
+      heading: "How we can help",
+      intro: "Legal support for businesses, individuals and families, explained in plain English.",
+      linkLabel: "View all services",
+    },
+    retainer: {
+      heading: "Your legal partner, on retainer",
+      promisesLabel: "On retainer, you can expect",
+      ctaLabel: "Talk to us about a retainer",
+      detailLabel: "About the retainer",
+    },
+    whyCrest: {
+      eyebrow: "Why Crest",
+      heading: "You need more than legal advice.",
+      text: "You need a team that listens, understands your needs, and stands by you when it matters most.",
+    },
+    howItWorks: {
+      eyebrow: "How it works",
+      heading: "What happens when you get in touch",
+    },
+    founder: {
+      eyebrow: "Meet the founder",
+      linkLabel: "Meet our team",
+    },
+    insights: {
+      eyebrow: "Insights",
+      heading: "General legal information",
+      intro: "Plain-English guides to common legal questions. General information only, not legal advice.",
+      linkLabel: "Read all insights",
+    },
+  },
+
+  // ── ABOUT PAGE COPY ──
+  about: {
+    eyebrow: "About us",
+    whoWeAre: {
+      heading: "Who we are",
+      paragraphs: [
+        "Crest Advocates is a law firm in Kenya, founded by Lynn Ngugi. We work with individuals, families and businesses, offering clear counsel and strong representation.",
+        "We believe you need more than legal advice. You need a team that listens, understands your needs, and stands by you when it matters most.",
+        "That is how we approach every matter: we take the time to understand what is at stake for you, explain your options in plain English, and help you make decisions with confidence.",
+      ],
+      status: "draft",
+    },
+    missionVisionHeading: "Mission and vision",
+    mission: {
+      label: "Our mission",
+      text: "To give our clients clear counsel and strong representation — protecting their rights, their interests and their peace of mind with professionalism and integrity.",
+      status: "draft",
+    },
+    vision: {
+      label: "Our vision",
+      text: "To be a legal partner people can trust to stand with them — rising above the complexity of the law so they can make decisions with confidence.",
+      status: "draft",
+    },
+    valuesHeading: "What we stand for",
+    valuesIntro: "Professionalism, integrity, and a client-focused approach to every matter we handle.",
+    howWeWork: {
+      heading: "How we work",
+      retainer: {
+        title: "As your legal partner, on retainer",
+        text: "We don't just show up when things go wrong. On retainer, we become your legal partner. We learn your business, understand your goals and give you direct, priority access to our team, so you can make decisions with confidence.",
+        linkLabel: "About the retainer",
+        status: "confirmed",
+      },
+      oneOff: {
+        title: "For a specific matter",
+        text: "When you need help with a particular matter, such as buying property, resolving a dispute or planning your estate, we work with you on that matter. We start by listening, then explain your options and the next steps clearly.",
+        linkLabel: "View all services",
+        status: "draft",
+      },
+    },
+    // Render only when provided. Never invent years or credentials.
+    experienceHeading: "Experience",
+    experienceNote: "",                         // TODO — firm to provide, if wanted
+    credentialsHeading: "Credentials and memberships",
+    credentials: [] as string[],                // TODO — firm-level memberships, if any
+  },
+
   // ── COLOURS ── (sampled from the logo — see Design System)
   colors: {
     navy: "#03112C",
