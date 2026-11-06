@@ -159,7 +159,7 @@
 
   /* Long-form article body on light backgrounds */
   .prose-article {
-    @apply max-w-prose text-base leading-relaxed text-slate md:text-lg;
+    @apply max-w-2xl text-base leading-relaxed text-slate md:text-lg;
   }
   .prose-article > * + * {
     @apply mt-5;

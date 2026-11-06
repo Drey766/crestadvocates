@@ -51,13 +51,15 @@ Note: until a sending domain is verified, Resend only delivers to the email addr
 
 ### Images
 
-Every image in `public/images/` is generated from the two originals in `assets/`:
+The logo and Lynn's portrait are generated from the two originals in `assets/`:
 
 ```bash
 node scripts/prepare-assets.mjs
 ```
 
 Never crop or resize images by hand. `assets/owner-original.jpg` shows client files on the desk: it is listed in `.gitignore` and must **never** be committed, pushed or displayed. Only the cropped portrait the script produces is used. The generated files in `public/images/` are committed, so the script only needs to run again when the originals change.
+
+The service and Insights photos in `public/images/photos/` come from [Pexels](https://www.pexels.com/license/) (free for commercial use, no attribution required). `scripts/prepare-photos.mjs` lists each one with its source page; add a line there and run `node scripts/prepare-photos.mjs` to change them. Keep to the rules at the start of that script: no gavels, scales or skylines, no recognisable faces, and no readable text on documents.
 
 ---
 
@@ -110,6 +112,7 @@ Add an entry to `src/data/services.json`:
   "slug": "tax-law",
   "title": "Tax Law",
   "icon": "Landmark",
+  "image": "/images/photos/service-tax-law.jpg",
   "audience": ["businesses"],
   "summary": "One sentence shown on cards.",
   "overview": ["Paragraph one.", "Paragraph two."],
@@ -124,6 +127,7 @@ Add an entry to `src/data/services.json`:
 - `slug` becomes the address (`/services/tax-law`) and must be unique.
 - `audience` is `businesses`, `individuals` or both. It drives the filter tabs on `/services`.
 - `icon` is a [Lucide](https://lucide.dev/icons) icon name. If it is new, add it to the map in `src/components/ui/ServiceIcon.tsx`, otherwise a generic icon is shown.
+- `image` is optional. Without it, the page shows the icon in a framed box instead of a photo.
 - `faqs` and `relatedPosts` may be empty lists. `relatedPosts` must name posts that exist.
 - `"featured": true` puts a service first and gives it the wide card. Only the Business Legal Retainer uses it today.
 - The new service appears automatically in the services grid, the contact form's "Area of law" list and the sitemap.
@@ -170,7 +174,7 @@ Add an entry to `src/data/blogs.json`:
   "slug": "a-clear-descriptive-title",
   "excerpt": "One or two sentences shown on cards and in search results.",
   "content": "<p>Opening paragraph.</p>\n<h2>A section</h2>\n<p>Text.</p>\n<p><strong>General information only — not legal advice.</strong> Laws change; speak to an advocate about your situation.</p>",
-  "cover": null,
+  "cover": "/images/photos/post-a-clear-title.jpg",
   "category": "Business",
   "author_name": "Crest Advocates",
   "read_time": 4,
@@ -183,7 +187,7 @@ Add an entry to `src/data/blogs.json`:
 - `content` is simple HTML: `<p>`, `<h2>`, `<ul>`/`<li>`, `<blockquote>`, `<strong>` and `<a href='/contact'>`. Start sections at `<h2>`; the page title is the only `<h1>`.
 - Every post **must** end with the notice shown above. The build fails without it.
 - Keep posts general. Name widely known Acts (for example the Law of Succession Act) but do not cite section numbers, fees, filing deadlines or thresholds, which change and turn readers' questions into advice.
-- Leave `cover` as `null`: each post gets a generated branded cover. Do not use stock photos.
+- `cover` is the path of a photo in `public/images/photos/` (see [Images](#images)). Set it to `null` for a branded card of peak lines instead.
 - `category` drives the topic filter on `/blog`. Reuse an existing category where possible.
 - Posts are listed newest first by `created_at` (`YYYY-MM-DD`). Set `"published": false` to hide a post without deleting it.
 
@@ -227,6 +231,8 @@ The site is built so that anything not yet supplied is simply left out. It is co
 - [ ] **FAQs** on the contact page
 - [ ] **All six Insights posts.** Check each one for accuracy against current law and practice.
 - [ ] **Your bio**: the short and full versions on the team page
+- [ ] **Retainer summary and About text.** The retainer's promises and overview are still your own words, but its one-line summary and the retainer text on the About page were reworded to avoid repeating the same sentences.
+- [ ] **Stock photos** on the service pages and Insights posts. These are illustrations from Pexels, not the firm's clients or premises. Check you are comfortable with them under the advertising rules, particularly the two family photos.
 
 **About you and the team**
 
@@ -256,7 +262,7 @@ The site is built so that anything not yet supplied is simply left out. It is co
 
 ## Photography wishlist
 
-The site deliberately uses no stock photography. These real photos would strengthen it, roughly in order of importance:
+The service pages and Insights posts currently use stock photos from Pexels. Real photos of the firm would be stronger, and could replace them over time. In rough order of importance:
 
 1. **Headshot of Lynn.** Plain or softly blurred background, natural light, shoulders up, looking at the camera. Shoot both portrait and square framing, with room around the head for cropping. Business dress in the firm's palette (navy, neutrals) works well against the site.
 2. **Headshots of each advocate and staff member** in the same style, background and lighting as Lynn's, so the team grid looks consistent.
@@ -270,7 +276,7 @@ Please supply the original full-resolution files (JPEG or HEIC straight from the
 
 ## QA checklist
 
-Run through this before launch and after any significant change. Results from the last full pass (November 2026, Phase 7) are noted.
+Run through this before launch and after any significant change. Results from the last full pass (November 2026) are noted.
 
 ### Professional conduct
 
@@ -287,6 +293,8 @@ Pages: `/`, `/about`, `/services`, a service page, `/team`, `/team/lynn-ngugi`, 
 - [x] Mobile: the bottom bar (Call · WhatsApp · Book) is always visible and does not cover content; the menu opens, closes with Escape and closes when a link is chosen
 - [x] Desktop: the floating WhatsApp button is visible and does not cover content
 - [x] Buttons, links and form controls are at least 44 px tall (inline links inside paragraphs excepted)
+- [x] Every page still shows its content with JavaScript turned off (test this: it catches content stuck behind a `<Suspense>` boundary, which Lighthouse and axe do not)
+- [x] Category labels stay readable on every photo
 - [x] All images load and have alt text; Lynn's portrait shows the cropped image only
 - [x] `/contact?service=debt-recovery` pre-selects that area of law
 - [x] Unknown service, team or post addresses show the 404 page

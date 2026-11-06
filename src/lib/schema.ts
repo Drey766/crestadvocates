@@ -4,7 +4,7 @@ import { siteUrl } from "@/lib/utils";
 
 /** Serialise JSON-LD safely for a <script> tag (escapes "<" to block injection). */
 export function jsonLdString(data: object): string {
-  return JSON.stringify(data).replace(/</g, "\u003c");
+  return JSON.stringify(data).replace(/</g, "\\u003c");
 }
 
 /** Firm-level LegalService schema. Address fields appear only when provided. */

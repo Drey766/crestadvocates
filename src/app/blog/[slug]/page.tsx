@@ -3,10 +3,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { business } from "@/config/business";
-import { GeneratedCover } from "@/components/blog/GeneratedCover";
 import { PostCard } from "@/components/blog/PostCard";
+import { PostCover } from "@/components/blog/PostCover";
 import { FinalCta } from "@/components/home/FinalCta";
-import { Disclaimer } from "@/components/ui/Disclaimer";
 import { DraftBadge } from "@/components/ui/DraftBadge";
 import { GoldRule } from "@/components/ui/GoldRule";
 import { MountainPattern } from "@/components/ui/MountainPattern";
@@ -18,6 +17,10 @@ const copy = business.insights;
 
 // Fully static, so an unknown slug reaches notFound() before streaming starts and returns a real 404
 export const ensureStatic = "navigation";
+
+// Reads params outside <Suspense> on purpose. Moving the read inside it would put the whole page
+// in a hidden <div> until JavaScript reveals it, leaving visitors and crawlers without JS a blank page.
+export const instant = false;
 
 export function generateStaticParams() {
   return getPosts().map((post) => ({ slug: post.slug }));
@@ -65,8 +68,8 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
                 · {copy.readTime(post.read_time)}
               </p>
             </div>
-            <div className="hidden border border-navy-line p-2 lg:block">
-              <GeneratedCover category={post.category} size="hero" />
+            <div className="border border-navy-line p-2">
+              <PostCover post={post} size="hero" showLabel={false} priority />
             </div>
           </div>
         </div>
@@ -74,14 +77,11 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
 
       <article className="section-padding bg-white">
         <div className="container-site">
-          <p className="mx-auto max-w-prose font-display text-2xl italic leading-snug text-ink md:text-3xl">
+          <p className="mx-auto max-w-2xl font-display text-2xl italic leading-snug text-ink md:text-3xl">
             {post.excerpt}
           </p>
           {/* Content is the firm's own HTML from src/data/blogs.json, not user input */}
           <div className="prose-article mx-auto mt-10" dangerouslySetInnerHTML={{ __html: post.content }} />
-          <aside className="mx-auto mt-12 max-w-prose border-l-2 border-gold bg-ivory p-6">
-            <Disclaimer />
-          </aside>
         </div>
       </article>
 

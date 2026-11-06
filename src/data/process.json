@@ -8,13 +8,13 @@
   {
     "step": 2,
     "title": "Consultation",
-    "description": "We listen, ask the right questions and take the time to understand your situation and what matters to you.",
+    "description": "We listen and ask the right questions, so that we understand your situation before we advise.",
     "status": "draft"
   },
   {
     "step": 3,
     "title": "A clear plan",
-    "description": "We explain your options and the next steps in plain English, so you can make decisions with confidence.",
+    "description": "We set out your options and the next steps, so you know where you stand and what happens next.",
     "status": "draft"
   }
 ]

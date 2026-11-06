@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, MessageCircle, Phone } from "lucide-react";
+import { ArrowLeft, MessageCircle } from "lucide-react";
 import { business } from "@/config/business";
 import { PostCard } from "@/components/blog/PostCard";
 import { FinalCta } from "@/components/home/FinalCta";
@@ -19,6 +20,10 @@ const copy = business.services;
 
 // Fully static, so an unknown slug reaches notFound() before streaming starts and returns a real 404
 export const ensureStatic = "navigation";
+
+// Reads params outside <Suspense> on purpose. Moving the read inside it would put the whole page
+// in a hidden <div> until JavaScript reveals it, leaving visitors and crawlers without JS a blank page.
+export const instant = false;
 
 export function generateStaticParams() {
   return getServices().map((service) => ({ slug: service.slug }));
@@ -80,67 +85,47 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
                 </a>
               </div>
             </div>
-            <div aria-hidden="true" className="hidden border border-navy-line p-3 lg:block">
-              <div className="flex size-56 items-center justify-center border border-gold/40 bg-navy-raised xl:size-64">
-                <ServiceIcon name={service.icon} className="size-24 text-gold" />
+            {service.image ? (
+              <div aria-hidden="true" className="border border-navy-line p-2 lg:w-96">
+                <div className="relative aspect-[3/2]">
+                  <Image src={service.image} alt="" fill sizes="(min-width: 1024px) 384px, 100vw" priority className="object-cover" />
+                  <div className="absolute inset-0 bg-navy/15" />
+                </div>
               </div>
-            </div>
+            ) : (
+              <div aria-hidden="true" className="hidden border border-navy-line p-3 lg:block">
+                <div className="flex size-56 items-center justify-center border border-gold/40 bg-navy-raised xl:size-64">
+                  <ServiceIcon name={service.icon} className="size-24 text-gold" />
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
 
       {/* Overview + how we can help */}
       <section className="section-padding bg-ivory">
-        <div className="container-site grid gap-12 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] lg:gap-16">
-          <div>
-            {service.overview.length > 0 && (
-              <section aria-labelledby="overview">
-                <h2 id="overview" className="text-3xl md:text-4xl">
-                  {copy.detail.overviewHeading}
-                </h2>
-                <div className="mt-6 space-y-5 text-base leading-relaxed md:text-lg">
-                  {service.overview.map((paragraph, i) => (
-                    <p key={`${service.slug}-overview-${i}`}>{paragraph}</p>
-                  ))}
-                </div>
-              </section>
-            )}
-            {service.howWeHelp.length > 0 && (
-              <section aria-labelledby="how-we-help" className={service.overview.length > 0 ? "mt-14" : undefined}>
-                <h2 id="how-we-help" className="text-3xl md:text-4xl">
-                  {copy.detail.howWeHelpHeading}
-                </h2>
-                <CheckList items={service.howWeHelp} className="mt-6 text-base text-ink md:text-lg" />
-              </section>
-            )}
-          </div>
-
-          <aside aria-labelledby="talk-to-us" className="hidden lg:block">
-            <div className="on-navy card-dark sticky top-28 p-8">
-              <h2 id="talk-to-us" className="text-2xl">
-                {copy.detail.asideHeading}
+        <div className="container-site grid gap-12 lg:grid-cols-2 lg:gap-16">
+          {service.overview.length > 0 && (
+            <section aria-labelledby="overview">
+              <h2 id="overview" className="text-3xl md:text-4xl">
+                {copy.detail.overviewHeading}
               </h2>
-              <p className="mt-3 leading-relaxed">{copy.detail.asideText}</p>
-              <div className="mt-6 flex flex-col gap-3">
-                <Link href={contactHref} className="btn-gold">
-                  {business.copy.primaryCta}
-                </Link>
-                <a
-                  href={whatsappLink(whatsappText)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-outline-gold"
-                >
-                  <MessageCircle aria-hidden="true" className="size-4" />
-                  {business.copy.secondaryCta}
-                </a>
-                <a href={business.phoneHref} className="btn-outline-gold">
-                  <Phone aria-hidden="true" className="size-4" />
-                  {business.phone}
-                </a>
+              <div className="mt-6 space-y-5 text-base leading-relaxed md:text-lg">
+                {service.overview.map((paragraph, i) => (
+                  <p key={`${service.slug}-overview-${i}`}>{paragraph}</p>
+                ))}
               </div>
-            </div>
-          </aside>
+            </section>
+          )}
+          {service.howWeHelp.length > 0 && (
+            <section aria-labelledby="how-we-help">
+              <h2 id="how-we-help" className="text-3xl md:text-4xl">
+                {copy.detail.howWeHelpHeading}
+              </h2>
+              <CheckList items={service.howWeHelp} className="mt-6 text-base text-ink md:text-lg" />
+            </section>
+          )}
         </div>
       </section>
 
@@ -150,7 +135,7 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
           <MountainPattern />
           <div className="container-site section-padding relative">
             <SectionHeading title={copy.detail.whatToExpectHeading} />
-            <ol className="mt-12 grid gap-4 md:grid-cols-2">
+            <ol className={`mt-12 grid gap-4 md:grid-cols-2 ${service.whatToExpect.length % 2 ? "lg:grid-cols-3" : ""}`}>
               {service.whatToExpect.map((step, i) => (
                 <li key={`${service.slug}-expect-${i}`} className="card-dark flex gap-5">
                   <span aria-hidden="true" className="font-display text-4xl leading-none text-gold">
@@ -198,7 +183,7 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
       )}
 
       <FinalCta
-        heading={business.copy.finalCtaHeading}
+        heading={copy.detail.ctaHeading(service.title)}
         text={copy.detail.ctaText}
         contactHref={contactHref}
         whatsappText={whatsappText}

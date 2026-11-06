@@ -52,7 +52,7 @@ export const business = {
   // ── VOICE / MICRO-COPY ──
   copy: {
     heroHeadline: "Rising Above. Protecting What Matters.",
-    heroSubtext: "Clear counsel. Strong representation. Your rights, your interests and your peace of mind — in capable hands.",
+    heroSubtext: "Clear counsel. Strong representation. For individuals, families and businesses in Kenya.",
     primaryCta: "Schedule a Consultation",
     secondaryCta: "WhatsApp Us",
     whatsappPrefill: "Hello Crest Advocates, I'd like to make an enquiry.",
@@ -100,7 +100,7 @@ export const business = {
       title: "Client-focused approach",
       summary: "We listen first, and shape our advice around your goals and circumstances.",
       detail:
-        "Every client's situation is different. We take the time to understand yours, explain things in plain English and stand by you when it matters most.",
+        "Every client's situation is different. We take the time to understand yours and shape our advice around what you need.",
       status: "draft",
     },
   ],
@@ -110,18 +110,18 @@ export const business = {
     // One sentence per entry in `pillars`, same order (draft)
     pillarNotes: [
       "We explain where you stand in plain English, so you understand your rights before you act.",
-      "We take the time to understand what matters to you, and shape our advice around it.",
+      "We find out what matters most to you, so that the advice we give serves it.",
       "You have a team to turn to when questions come up, and we keep you informed along the way.",
     ],
     pillarNotesStatus: "draft",
     practiceAreas: {
       eyebrow: "Practice areas",
       heading: "How we can help",
-      intro: "Legal support for businesses, individuals and families, explained in plain English.",
+      intro: "Legal support for businesses, individuals and families.",
       linkLabel: "View all services",
     },
     retainer: {
-      heading: "Your legal partner, on retainer",
+      heading: "Ongoing legal support for your business",
       promisesLabel: "On retainer, you can expect",
       ctaLabel: "Talk to us about a retainer",
       detailLabel: "About the retainer",
@@ -142,7 +142,7 @@ export const business = {
     insights: {
       eyebrow: "Insights",
       heading: "General legal information",
-      intro: "Plain-English guides to common legal questions. General information only, not legal advice.",
+      intro: "Short guides to common legal questions. General information only, not legal advice.",
       linkLabel: "Read all insights",
     },
   },
@@ -153,9 +153,8 @@ export const business = {
     whoWeAre: {
       heading: "Who we are",
       paragraphs: [
-        "Crest Advocates is a law firm in Kenya, founded by Lynn Ngugi. We work with individuals, families and businesses, offering clear counsel and strong representation.",
-        "We believe you need more than legal advice. You need a team that listens, understands your needs, and stands by you when it matters most.",
-        "That is how we approach every matter: we take the time to understand what is at stake for you, explain your options in plain English, and help you make decisions with confidence.",
+        "Crest Advocates is a law firm in Kenya, founded by Lynn Ngugi. We work with individuals, families and businesses.",
+                "We start by listening. We take the time to understand what is at stake for you, explain your options in plain English and help you decide on the next step.",
       ],
       status: "draft",
     },
@@ -176,13 +175,13 @@ export const business = {
       heading: "How we work",
       retainer: {
         title: "As your legal partner, on retainer",
-        text: "We don't just show up when things go wrong. On retainer, we become your legal partner. We learn your business, understand your goals and give you direct, priority access to our team, so you can make decisions with confidence.",
+        text: "For businesses that want a legal partner on an ongoing basis, not only when a problem arises. We get to know how you operate, and you can reach us directly when questions come up.",
         linkLabel: "About the retainer",
-        status: "confirmed",
+        status: "draft",
       },
       oneOff: {
         title: "For a specific matter",
-        text: "When you need help with a particular matter, such as buying property, resolving a dispute or planning your estate, we work with you on that matter. We start by listening, then explain your options and the next steps clearly.",
+        text: "When you need help with a particular matter, such as buying property, resolving a dispute or planning your estate, we work with you on that matter from the first conversation through to the end.",
         linkLabel: "View all services",
         status: "draft",
       },
@@ -199,7 +198,7 @@ export const business = {
     eyebrow: "Services",
     heading: "Legal support for businesses, individuals and families",
     intro:
-      "Whether you run a business or need help with a personal or family matter, we listen first, explain your options in plain English and stand by you through the process.",
+      "Whether you run a business or need help with a personal or family matter, we listen first, explain your options and stand by you through the process.",
     gridHeading: "Practice areas",
     filterLabel: "Show services for",
     filters: { all: "All", businesses: "For Businesses", individuals: "For Individuals & Families" },
@@ -214,9 +213,8 @@ export const business = {
       whatToExpectHeading: "What to expect",
       faqsHeading: "Common questions",
       insightsHeading: "Related insights",
-      asideHeading: "Talk to us",
-      asideText: "Tell us briefly what you need. We'll discuss the details properly once we speak.",
-      ctaText: "Get in touch to talk through your situation and your options.",
+      ctaHeading: (service: string) => `Talk to us about ${service}`,
+      ctaText: "Tell us what you need, and we'll talk through your options.",
     },
     whatsappPrefill: (service: string) => `Hello Crest Advocates, I'd like to ask about ${service}.`,
   },
@@ -225,7 +223,7 @@ export const business = {
   team: {
     eyebrow: "Our team",
     heading: "The people you'll work with",
-    intro: "Clear counsel and strong representation start with people who listen. Meet the team at Crest Advocates.",
+    intro: "Good advice starts with people who listen. Meet the team at Crest Advocates.",
     gridHeading: "Our team",
     profileLabel: "View profile",
     backLabel: "Our team",
@@ -275,6 +273,8 @@ export const business = {
     bookingCta: "Choose a time",
     mapLabel: "View on map",
     confidentialityHeading: "A note on confidentiality",
+    confidentialityText:
+      "Requests from this website reach us by email, so please keep sensitive details for our conversation. Sending a request does not by itself make us your advocates.",
     formHeading: "Consultation request",
     formIntro: "Fields marked * are required.",
     faqsHeading: "Common questions",
@@ -314,7 +314,7 @@ export const business = {
         clientType: "Please tell us whether you are an individual or a business.",
         areaOfLaw: "Please choose an area of law, or \"Not sure yet\".",
         preferredContact: "Please choose how we should contact you.",
-        preferredDate: "Please enter a valid date.",
+        preferredDate: "Please choose today or a later date.",
         preferredTime: "Please choose a time of day.",
         description: "Please keep your description to 600 characters or fewer.",
         consent: "Please confirm that we may contact you about this request.",
@@ -335,7 +335,7 @@ export const business = {
         heading: "What we collect",
         paragraphs: [
           "When you send a consultation request, we collect the details you type into the form: your name, phone number, email address (if you give one), whether you are an individual or a business, the area of law, how and when you would like to be contacted, and the short description you choose to add.",
-          "Please do not include confidential or sensitive details in the form. We will discuss your matter properly once we speak.",
+          "Please do not include confidential or sensitive details in the form.",
         ],
       },
       {
@@ -397,7 +397,7 @@ export const business = {
       {
         heading: "Confidentiality",
         paragraphs: [
-          "Please do not send confidential or sensitive details through the contact form, by email or on WhatsApp before we have spoken. We will discuss your matter properly once we speak.",
+          "Please do not send confidential or sensitive details through the contact form, by email or on WhatsApp before we have spoken.",
         ],
       },
       {

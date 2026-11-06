@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { business } from "@/config/business";
 import type { BlogPost } from "@/types";
-import { GeneratedCover } from "@/components/blog/GeneratedCover";
+import { PostCover } from "@/components/blog/PostCover";
 import { DraftBadge } from "@/components/ui/DraftBadge";
 import { formatDate } from "@/lib/utils";
 
@@ -12,7 +12,7 @@ export function PostCard({ post }: { post: BlogPost }) {
       href={`/blog/${post.slug}`}
       className="card group flex h-full flex-col overflow-hidden p-0 transition-colors hover:border-gold"
     >
-      <GeneratedCover category={post.category} />
+      <PostCover post={post} />
       <span className="flex flex-1 flex-col p-6">
         <DraftBadge status={post.status} className="self-start" />
         <h3 className="mt-3 text-2xl group-hover:underline group-hover:decoration-gold group-hover:underline-offset-4">

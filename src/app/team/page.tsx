@@ -24,7 +24,8 @@ export default function TeamPage() {
   const team = getTeam();
   const lead = team.find((m) => m.slug === business.founder.slug) ?? team[0];
   const others = team.filter((m) => m !== lead);
-  const leadBio = lead && (lead.bio.length > 0 ? lead.bio : [lead.shortBio].filter(Boolean));
+  // Only the opening here: the profile page carries the full bio
+  const leadIntro = lead?.bio[0] || lead?.shortBio;
 
   return (
     <>
@@ -58,11 +59,7 @@ export default function TeamPage() {
                 </p>
               )}
               <GoldRule className="mt-6 max-w-40" />
-              <div className="mt-6 space-y-5 text-base leading-relaxed md:text-lg">
-                {leadBio.map((paragraph, i) => (
-                  <p key={`${lead.slug}-bio-${i}`}>{paragraph}</p>
-                ))}
-              </div>
+              {leadIntro && <p className="mt-6 text-base leading-relaxed md:text-lg">{leadIntro}</p>}
               <DraftBadge status={lead.status} className="mt-4" />
               <div className="mt-8">
                 <Link href={`/team/${lead.slug}`} className="btn-outline-navy">

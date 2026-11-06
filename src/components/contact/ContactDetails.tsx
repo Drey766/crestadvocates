@@ -25,41 +25,38 @@ export function ContactDetails() {
         </a>
       </div>
 
-      <dl className="mt-8 space-y-5 text-sm">
-        <Detail icon={<Phone className="size-4" />} label={copy.labels.phone}>
-          <a href={business.phoneHref} className="inline-flex min-h-11 items-center text-white hover:text-gold">
-            {business.phone}
-          </a>
-        </Detail>
-        {business.email && (
-          <Detail icon={<Mail className="size-4" />} label={copy.labels.email}>
-            <a href={`mailto:${business.email}`} className="inline-flex min-h-11 items-center text-white hover:text-gold">
-              {business.email}
-            </a>
-          </Detail>
-        )}
-        {location && (
-          <Detail icon={<MapPin className="size-4" />} label={copy.labels.address}>
-            <span className="text-white">{location}</span>
-            {business.mapUrl && (
-              <a
-                href={business.mapUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-1 inline-flex min-h-11 items-center gap-1.5 text-gold hover:text-gold-light"
-              >
-                {copy.mapLabel}
-                <ExternalLink aria-hidden="true" className="size-3.5" />
+      {(business.email || location || business.hours) && (
+        <dl className="mt-8 space-y-5 text-sm">
+          {business.email && (
+            <Detail icon={<Mail className="size-4" />} label={copy.labels.email}>
+              <a href={`mailto:${business.email}`} className="inline-flex min-h-11 items-center text-white hover:text-gold">
+                {business.email}
               </a>
-            )}
-          </Detail>
-        )}
-        {business.hours && (
-          <Detail icon={<Clock className="size-4" />} label={copy.labels.hours}>
-            <span className="text-white">{business.hours}</span>
-          </Detail>
-        )}
-      </dl>
+            </Detail>
+          )}
+          {location && (
+            <Detail icon={<MapPin className="size-4" />} label={copy.labels.address}>
+              <span className="text-white">{location}</span>
+              {business.mapUrl && (
+                <a
+                  href={business.mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-1 inline-flex min-h-11 items-center gap-1.5 text-gold hover:text-gold-light"
+                >
+                  {copy.mapLabel}
+                  <ExternalLink aria-hidden="true" className="size-3.5" />
+                </a>
+              )}
+            </Detail>
+          )}
+          {business.hours && (
+            <Detail icon={<Clock className="size-4" />} label={copy.labels.hours}>
+              <span className="text-white">{business.hours}</span>
+            </Detail>
+          )}
+        </dl>
+      )}
 
       {bookingUrl && (
         <div className="mt-8 border-t border-navy-line pt-8">
@@ -77,7 +74,7 @@ export function ContactDetails() {
           <ShieldCheck aria-hidden="true" className="size-5 text-gold" />
           {copy.confidentialityHeading}
         </h3>
-        <p className="mt-3 text-sm leading-relaxed">{business.legal.disclaimer}</p>
+        <p className="mt-3 text-sm leading-relaxed">{copy.confidentialityText}</p>
       </div>
     </div>
   );

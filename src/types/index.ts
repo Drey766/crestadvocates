@@ -1,7 +1,7 @@
 // src/types/index.ts — content types for src/data/*.json and the contact form
 
 export interface Service {
-  slug: string; title: string; icon: string;
+  slug: string; title: string; icon: string; image?: string; // /images/photos/…
   audience: ("businesses" | "individuals")[];
   summary: string; overview: string[]; howWeHelp: string[]; whatToExpect: string[];
   faqs: { q: string; a: string }[];

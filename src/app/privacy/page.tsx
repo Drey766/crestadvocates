@@ -23,9 +23,8 @@ export default function PrivacyPage() {
             {labels.phone}: <a href={business.phoneHref}>{business.phone}</a>
           </li>
           <li>
-            {labels.whatsapp}:{" "}
             <a href={whatsappLink()} target="_blank" rel="noopener noreferrer">
-              {business.phone}
+              {business.contact.whatsappCta}
             </a>
           </li>
           {business.email && (

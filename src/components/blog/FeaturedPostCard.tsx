@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { business } from "@/config/business";
 import type { BlogPost } from "@/types";
-import { GeneratedCover } from "@/components/blog/GeneratedCover";
+import { PostCover } from "@/components/blog/PostCover";
 import { DraftBadge } from "@/components/ui/DraftBadge";
 import { formatDate } from "@/lib/utils";
 
@@ -14,7 +14,7 @@ export function FeaturedPostCard({ post }: { post: BlogPost }) {
       href={`/blog/${post.slug}`}
       className="card group grid overflow-hidden p-0 transition-colors hover:border-gold md:grid-cols-2"
     >
-      <GeneratedCover category={post.category} size="hero" className="md:aspect-auto md:h-full" />
+      <PostCover post={post} size="hero" className="md:aspect-auto md:h-full" />
       <span className="flex flex-col justify-center p-6 md:p-10">
         <span className="flex flex-wrap items-center gap-3">
           <span className="eyebrow">{copy.featuredLabel}</span>

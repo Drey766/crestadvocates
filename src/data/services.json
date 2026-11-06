@@ -3,8 +3,9 @@
     "slug": "business-legal-retainer",
     "title": "Business Legal Retainer",
     "icon": "Handshake",
+    "image": "/images/photos/service-business-legal-retainer.jpg",
     "audience": ["businesses"],
-    "summary": "We don't just show up when things go wrong. On retainer, we become your legal partner.",
+    "summary": "Ongoing legal support for your business, with direct access to a team that already knows how you work.",
     "overview": [
       "At Crest Advocates, we don't just show up when things go wrong. On retainer, we become your legal partner.",
       "We learn your business, understand your goals and give you direct, priority access to our team, so you can make decisions with confidence.",
@@ -48,11 +49,12 @@
     "slug": "corporate-commercial-law",
     "title": "Corporate & Commercial Law",
     "icon": "Building2",
+    "image": "/images/photos/service-corporate-commercial-law.jpg",
     "audience": ["businesses"],
     "summary": "Legal support for setting up a company, putting agreements in writing and keeping your business compliant as it grows.",
     "overview": [
       "Every business, from a new start-up to an established company, depends on sound legal foundations. The right structure, clear agreements and good records make it easier to grow, take on partners and avoid disputes.",
-      "We help business owners understand their options in plain English, prepare and review the documents that matter, and keep up with the obligations that come with running a company in Kenya."
+      "We help business owners understand their options, prepare and review the documents that matter, and keep up with the obligations that come with running a company in Kenya."
     ],
     "howWeHelp": [
       "Advising on choosing a business structure and registering a company",
@@ -63,7 +65,7 @@
     ],
     "whatToExpect": [
       "We start by understanding your business and what you want to achieve.",
-      "We explain your options and the documents involved in plain language.",
+      "We explain your options and the documents involved.",
       "We prepare or review the documents and talk you through anything that needs your decision.",
       "You receive final documents you understand, with clear next steps."
     ],
@@ -87,6 +89,7 @@
     "slug": "employment-labour-law",
     "title": "Employment & Labour Law",
     "icon": "BriefcaseBusiness",
+    "image": "/images/photos/service-employment-labour-law.jpg",
     "audience": ["businesses", "individuals"],
     "summary": "Clear guidance for employers and employees on contracts, workplace policies and employment disputes.",
     "overview": [
@@ -125,6 +128,7 @@
     "slug": "debt-recovery",
     "title": "Debt Recovery",
     "icon": "Receipt",
+    "image": "/images/photos/service-debt-recovery.jpg",
     "audience": ["businesses"],
     "summary": "A measured, professional approach to recovering money owed to your business.",
     "overview": [
@@ -163,6 +167,7 @@
     "slug": "intellectual-property",
     "title": "Intellectual Property",
     "icon": "Lightbulb",
+    "image": "/images/photos/service-intellectual-property.jpg",
     "audience": ["businesses"],
     "summary": "Helping you protect your brand, your name and the work your business creates.",
     "overview": [
@@ -200,11 +205,12 @@
     "slug": "conveyancing-real-estate",
     "title": "Conveyancing & Real Estate",
     "icon": "House",
+    "image": "/images/photos/service-conveyancing-real-estate.jpg",
     "audience": ["individuals", "businesses"],
     "summary": "Careful legal support when you buy, sell, lease or charge land and property.",
     "overview": [
       "Buying or selling property is one of the most significant transactions many people make. Careful checks before money changes hands, and properly prepared documents, help protect your investment.",
-      "We guide individuals and businesses through property transactions in plain language, from the first searches to the registration of the transfer under the Land Registration Act."
+      "We guide individuals and businesses through property transactions, from the first searches to the registration of the transfer under the Land Registration Act."
     ],
     "howWeHelp": [
       "Carrying out searches and due diligence on land and property",
@@ -238,6 +244,7 @@
     "slug": "civil-litigation-dispute-resolution",
     "title": "Civil Litigation & Dispute Resolution",
     "icon": "MessagesSquare",
+    "image": "/images/photos/service-civil-litigation-dispute-resolution.jpg",
     "audience": ["individuals", "businesses"],
     "summary": "Clear advice and strong representation when a dispute needs to be resolved.",
     "overview": [
@@ -276,6 +283,7 @@
     "slug": "family-law",
     "title": "Family Law",
     "icon": "UsersRound",
+    "image": "/images/photos/service-family-law.jpg",
     "audience": ["individuals"],
     "summary": "Sensitive, confidential guidance on family matters, from separation to children's welfare.",
     "overview": [
@@ -291,7 +299,7 @@
     ],
     "whatToExpect": [
       "A confidential conversation about your situation and your priorities.",
-      "A clear explanation of your options in plain language.",
+      "A clear explanation of your options.",
       "Support at each step, with care for the people involved."
     ],
     "faqs": [
@@ -314,6 +322,7 @@
     "slug": "succession-probate",
     "title": "Wills, Succession & Probate",
     "icon": "ScrollText",
+    "image": "/images/photos/service-succession-probate.jpg",
     "audience": ["individuals"],
     "summary": "Planning ahead with a will, and guiding families through succession when a loved one has died.",
     "overview": [

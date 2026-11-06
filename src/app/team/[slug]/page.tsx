@@ -17,6 +17,10 @@ const detailKeys = Object.keys(copy.detailLabels) as (keyof typeof copy.detailLa
 // Fully static, so an unknown slug reaches notFound() before streaming starts and returns a real 404
 export const ensureStatic = "navigation";
 
+// Reads params outside <Suspense> on purpose. Moving the read inside it would put the whole page
+// in a hidden <div> until JavaScript reveals it, leaving visitors and crawlers without JS a blank page.
+export const instant = false;
+
 export function generateStaticParams() {
   return getTeam().map((member) => ({ slug: member.slug }));
 }

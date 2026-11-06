@@ -17,6 +17,9 @@ const e = business.contact.form.errors;
 // Empty form fields arrive as ""; treat them as missing
 const blankToUndefined = (v: unknown) => (typeof v === "string" && v.trim() === "" ? undefined : v);
 
+// Yesterday in UTC: visitors ahead of or behind UTC can still choose their own "today"
+const earliestDate = () => new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
+
 export function consultationSchema(areaValues: readonly string[]): z.ZodType<ConsultationRequest> {
   return z
     .object({
@@ -29,7 +32,10 @@ export function consultationSchema(areaValues: readonly string[]): z.ZodType<Con
       clientType: z.enum(["individual", "business"], { error: e.clientType }),
       areaOfLaw: z.string({ error: e.areaOfLaw }).refine((v) => areaValues.includes(v), e.areaOfLaw),
       preferredContact: z.enum(["whatsapp", "call", "email"], { error: e.preferredContact }),
-      preferredDate: z.preprocess(blankToUndefined, z.iso.date(e.preferredDate).optional()),
+      preferredDate: z.preprocess(
+        blankToUndefined,
+        z.iso.date(e.preferredDate).refine((v) => v >= earliestDate(), e.preferredDate).optional(),
+      ),
       preferredTime: z.preprocess(
         blankToUndefined,
         z.enum(["morning", "afternoon", "evening"], { error: e.preferredTime }).optional(),
