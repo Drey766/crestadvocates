@@ -29,11 +29,26 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps<"/blog/[slug]">): Promise<Metadata> {
   const post = getPostBySlug((await params).slug);
   if (!post) return {};
+  // A page's openGraph replaces the layout's whole object, so the preview image, site name and
+  // locale must be repeated here or shared posts show no picture
+  const image = post.cover
+    ? { url: post.cover, width: 1200, height: 800, alt: post.title }
+    : { url: "/images/og-image.jpg", width: 1200, height: 630, alt: `${business.name} logo` };
   return {
     title: post.title,
     description: post.excerpt,
     alternates: { canonical: `/blog/${post.slug}` },
-    openGraph: { type: "article", title: post.title, description: post.excerpt, publishedTime: post.created_at },
+    openGraph: {
+      type: "article",
+      locale: "en_KE",
+      siteName: business.name,
+      url: `/blog/${post.slug}`,
+      title: post.title,
+      description: post.excerpt,
+      publishedTime: post.created_at,
+      images: [image],
+    },
+    twitter: { card: "summary_large_image", images: [image.url] },
   };
 }
 
