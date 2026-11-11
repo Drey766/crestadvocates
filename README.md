@@ -40,7 +40,7 @@ Both must finish with zero errors. The build also checks every file in `src/data
 | `RESEND_API_KEY` | For the form to email | API key from [Resend](https://resend.com). |
 | `CONTACT_EMAIL_TO` | For the form to email | The firm's inbox that receives consultation requests. |
 | `CONTACT_FROM_EMAIL` | For the form to email | Sender address, on a domain verified in Resend, e.g. `Website <website@yourdomain.co.ke>`. |
-| `NEXT_PUBLIC_SITE_URL` | Yes | The live address, e.g. `https://crestadvocates.co.ke`. Used for canonical links, the sitemap and social previews. |
+| `NEXT_PUBLIC_SITE_URL` | Recommended | The live address, currently `https://crestadvocates.vercel.app`. Used for canonical links, the sitemap, JSON-LD and link previews (WhatsApp, Instagram). If it is not set on Vercel, the project's production domain from Vercel is used instead; locally it falls back to `http://localhost:3000`. |
 | `NEXT_PUBLIC_BOOKING_URL` | Optional | A Cal.com or Calendly link. When set, the contact page shows "Book a time online". |
 | `NEXT_PUBLIC_SHOW_DRAFT_FLAGS` | Yes | `true` shows a "Draft — confirm with client" badge on unconfirmed content. Use `true` on previews and `false` on the live site. |
 | `WHATSAPP_API_TOKEN`, `WHATSAPP_PHONE_NUMBER_ID`, `WHATSAPP_TEMPLATE_NAME`, `OWNER_WHATSAPP_NUMBER` | Optional | Sends the firm a short WhatsApp alert (name, area of law, preferred contact method; never case details) when a request arrives. Needs the WhatsApp Cloud API and an approved message template with three body parameters in that order. |
@@ -68,7 +68,7 @@ The service and Insights photos in `public/images/photos/` come from [Pexels](ht
 1. Push this repository to GitHub. Check first that `git ls-files assets` does not list `owner-original.jpg`.
 2. In Vercel, choose **Add New → Project**, import the repository and keep the detected Next.js settings.
 3. Under **Settings → Environment Variables**, add the variables from the table above:
-   - **Production:** `NEXT_PUBLIC_SHOW_DRAFT_FLAGS=false` and `NEXT_PUBLIC_SITE_URL` set to the real domain.
+   - **Production:** `NEXT_PUBLIC_SHOW_DRAFT_FLAGS=false` and `NEXT_PUBLIC_SITE_URL=https://crestadvocates.vercel.app` (change it when the firm's own domain is added).
    - **Preview:** `NEXT_PUBLIC_SHOW_DRAFT_FLAGS=true`, so Lynn can see what still needs confirming.
 4. Deploy. Under **Settings → Domains**, add the firm's domain and follow Vercel's DNS instructions.
 5. Variables starting with `NEXT_PUBLIC_` are fixed when the site is built. After changing one, **redeploy** for it to take effect.

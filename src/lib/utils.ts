@@ -14,8 +14,16 @@ export function slugify(input: string): string {
     .replace(/^-+|-+$/g, "");
 }
 
-/** Absolute site origin, used for metadataBase, canonical URLs and JSON-LD. */
-export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000").replace(/\/$/, "");
+/**
+ * Absolute site origin, used for metadataBase, canonical URLs, the sitemap and JSON-LD.
+ * NEXT_PUBLIC_SITE_URL wins when set. Otherwise, on Vercel, the project's production domain
+ * (set by Vercel at build time, also on previews) so link previews never point at localhost.
+ */
+export const siteUrl = (
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "") ||
+  "http://localhost:3000"
+).replace(/\/$/, "");
 
 /** camelCase -> kebab-case, for CSS variable names. */
 export function kebab(input: string): string {
